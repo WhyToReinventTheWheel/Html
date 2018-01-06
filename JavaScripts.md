@@ -84,3 +84,65 @@
 	typeof [1,2,3,4]             // Returns "object" //The typeof operator returns "object" for arrays because in JavaScript arrays are objects.
 	typeof null                  // Returns "object"
 	typeof function myFunc(){}   // Returns "function"
+	
+# Objects
+	* var car = {type:"Fiat", model:"500", color:"white"};
+		objectName.propertyName or 	objectName["propertyName"]
+		car.type  or car["Fiat"]
+	* Object Method
+		objectName.methodName()
+		var person = {
+			firstName: "John",
+			lastName : "Doe",
+			id       : 5566,
+			fullName : function() {
+			   return this.firstName + " " + this.lastName;
+			}
+		};
+		document.getElementById("demo").innerHTML = person.fullName();
+	
+# Function
+	function myFunction(p1, p2) {
+		return p1 * p2;              // The function returns the product of p1 and p2
+	}
+	
+# Events
+	onchange:	An HTML element has been changed
+	onclick: 	The user clicks an HTML element
+	onmouseover:	The user moves the mouse over an HTML element
+	onmouseout:	The user moves the mouse away from an HTML element
+	onkeydown:	The user pushes a keyboard key
+	onload:		The browser has finished loading the page
+	
+# Switch 
+	It is a common mistake to forget that switch statements use strict comparison:
+	
+	var x = 10;
+	switch(x) {
+		case 10: alert("Hello");    // This will execute 
+	} 
+	
+	var x = 10;
+	switch(x) {
+		case "10": alert("Hello"); // This will not execute 
+	}
+	
+# For
+	var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+	var text = "";
+	var i;
+	for (i = 0; i < cars.length; i++) {
+		text += cars[i] + "<br>";
+	}
+	
+# JSON Text to a JavaScript Object
+	<script>
+		var text = '{"employees":[' +
+		'{"firstName":"John","lastName":"Doe" },' +
+		'{"firstName":"Anna","lastName":"Smith" },' +
+		'{"firstName":"Peter","lastName":"Jones" }]}';
+
+		obj = JSON.parse(text);
+		document.getElementById("demo").innerHTML =
+		obj.employees[1].firstName + " " + obj.employees[1].lastName;
+	</script>
