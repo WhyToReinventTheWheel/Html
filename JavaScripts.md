@@ -1,3 +1,6 @@
+https://www.w3schools.com/js/js_json_intro.asp
+Notes 
+
 # JavaScripts 
 	document.getElementById("demo").innerHTML = "Hello JavaScript";
 	document.getElementById('demo').innerHTML = 'Hello JavaScript';
@@ -86,6 +89,7 @@
 	typeof function myFunc(){}   // Returns "function"
 	
 # Objects
+	A JavaScript object is a collection of named values
 	* var car = {type:"Fiat", model:"500", color:"white"};
 		objectName.propertyName or 	objectName["propertyName"]
 		car.type  or car["Fiat"]
@@ -100,7 +104,10 @@
 			}
 		};
 		document.getElementById("demo").innerHTML = person.fullName();
-	
+	* var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+		var x = person;  // This will not create a copy of person.
+		x.age = 10;      // This will change both x.age and person.age
+		delete person.age;   // or delete person["age"]; 
 # Function
 	function myFunction(p1, p2) {
 		return p1 * p2;              // The function returns the product of p1 and p2
@@ -142,7 +149,39 @@
 		'{"firstName":"Anna","lastName":"Smith" },' +
 		'{"firstName":"Peter","lastName":"Jones" }]}';
 
-		obj = JSON.parse(text);
+		Since the JSON format is text only, it can easily be sent to and from a server, 
+		and used as a data format by any programming language.
+		var obj = JSON.parse(text);
 		document.getElementById("demo").innerHTML =
 		obj.employees[1].firstName + " " + obj.employees[1].lastName;
+		
+		var myJSON = JSON.stringify(obj);
 	</script>
+
+# JSON is Like XML Because
+	Both JSON and XML are "self describing" (human readable)
+	Both JSON and XML are hierarchical (values within values)
+	Both JSON and XML can be parsed and used by lots of programming languages
+	Both JSON and XML can be fetched with an XMLHttpRequest
+
+# JSON is Unlike XML Because
+	JSON doesn't use end tag
+	JSON is shorter
+	JSON is quicker to read and write
+	JSON can use arrays
+	The biggest difference is:
+
+	XML has to be parsed with an XML parser. JSON can be parsed by a standard JavaScript function.
+
+# Why JSON is Better Than XML
+	XML is much more difficult to parse than JSON.
+	JSON is parsed into a ready-to-use JavaScript object.
+	For AJAX applications, JSON is faster and easier than XML:
+	Using XML
+		Fetch an XML document
+		Use the XML DOM to loop through the document
+		Extract values and store in variables
+	Using JSON
+		Fetch a JSON string
+		JSON.Parse the JSON string
+		
